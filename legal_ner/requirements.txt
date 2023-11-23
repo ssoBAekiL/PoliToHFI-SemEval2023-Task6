@@ -12,4 +12,4 @@ uvicorn
 cohere
 openai
 tiktoken
-typing-extensions==4.6.0
+typing-extensions==4.8.0
