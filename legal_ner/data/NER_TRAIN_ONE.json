@@ -1,0 +1,129 @@
+[
+    {
+        "id": "d79fb7f965a74e418212458285c7c213",
+        "annotations": [
+            {
+                "result": [
+                    {
+                        "value": {
+                            "start": 7,
+                            "end": 40,
+                            "text": "High Court Of Kerala At Ernakulam",
+                            "labels": [
+                                "COURT"
+                            ]
+                        },
+                        "id": "2JN4GRYC",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 73,
+                            "end": 83,
+                            "text": "T.R.Ajayan",
+                            "labels": [
+                                "PETITIONER"
+                            ]
+                        },
+                        "id": "SIMZ3AEN",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 171,
+                            "end": 182,
+                            "text": "M.Ravindran",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "S9JF9CCI",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 237,
+                            "end": 251,
+                            "text": "Nirmala Dinesh",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "XUXELOF9",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 304,
+                            "end": 311,
+                            "text": "A.Kumar",
+                            "labels": [
+                                "LAWYER"
+                            ]
+                        },
+                        "id": "60NAL9QX",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 350,
+                            "end": 365,
+                            "text": "M.K.Pushpalatha",
+                            "labels": [
+                                "LAWYER"
+                            ]
+                        },
+                        "id": "J5CXTLAN",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 391,
+                            "end": 400,
+                            "text": "P.R.Raman",
+                            "labels": [
+                                "JUDGE"
+                            ]
+                        },
+                        "id": "0II679BV",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 425,
+                            "end": 436,
+                            "text": "V.K.Mohanan",
+                            "labels": [
+                                "JUDGE"
+                            ]
+                        },
+                        "id": "G17U4A5Z",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    }
+                ]
+            }
+        ],
+        "data": {
+            "text": "In The High Court Of Kerala At Ernakulam\n\nCrl Mc No. 1622 of 2006()\n\n\n1. T.R.Ajayan, S/O. O.Raman,\n                      ...  Petitioner\n\n                        Vs\n\n\n\n1. M.Ravindran,\n                       ...       Respondent\n\n2. Mrs. Nirmala Dinesh, W/O. Dinesh,\n\n                For Petitioner  :Sri.A.Kumar\n\n                For Respondent  :Smt.M.K.Pushpalatha\n\nThe Hon'ble Mr. Justice P.R.Raman\nThe Hon'ble Mr. Justice V.K.Mohanan\n\n Dated :07/01/2008\n\n O R D E R\n"
+        },
+        "meta": {
+            "source": "criminal_kerala_high_court preamble https://indiankanoon.org/doc/1351251"
+        }
+    }
+]
