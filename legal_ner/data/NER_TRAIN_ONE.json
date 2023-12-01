@@ -125,5 +125,160 @@
         "meta": {
             "source": "criminal_kerala_high_court preamble https://indiankanoon.org/doc/1351251"
         }
+    },
+    {
+        "id": "10d82191b30e4e9d9b0ab91c34606631",
+        "annotations": [
+            {
+                "result": [
+                    {
+                        "value": {
+                            "start": 21,
+                            "end": 40,
+                            "text": "Lokesh Kumar Sharma",
+                            "labels": [
+                                "JUDGE"
+                            ]
+                        },
+                        "id": "U5P6QHHU",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 371,
+                            "end": 383,
+                            "text": "Chanakyapuri",
+                            "labels": [
+                                "PETITIONER"
+                            ]
+                        },
+                        "id": "A6LRQOEU",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 445,
+                            "end": 470,
+                            "text": "Jindal Steel & Power Ltd.",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "IDAW5DQC",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 689,
+                            "end": 698,
+                            "text": "The State",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "JSHZJIF7",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 741,
+                            "end": 764,
+                            "text": "Planman Media Pvt. Ltd.",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "VUUA2QH2",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 852,
+                            "end": 869,
+                            "text": "Arindam Chaudhuri",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "AGKE2V27",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 1007,
+                            "end": 1031,
+                            "text": "Jindal Steel & Power Ltd",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "HQSGSESA",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 1035,
+                            "end": 1047,
+                            "text": "State & Ors.",
+                            "labels": [
+                                "RESPONDENT"
+                            ]
+                        },
+                        "id": "XZBV7I2N",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 1111,
+                            "end": 1121,
+                            "text": "A. Sandeep",
+                            "labels": [
+                                "LAWYER"
+                            ]
+                        },
+                        "id": "PIWFG5UO",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    },
+                    {
+                        "value": {
+                            "start": 1245,
+                            "end": 1255,
+                            "text": "Ashok Bose",
+                            "labels": [
+                                "LAWYER"
+                            ]
+                        },
+                        "id": "VY7M23X1",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    }
+                ]
+            }
+        ],
+        "data": {
+            "text": "In The Court Of Shri Lokesh Kumar Sharma\n      Additional Sessions Judge\u00ad04, New Delhi District\n                       Patiala House Courts, New Delhi\nUnique I D No.                         :  02403R0184312013\nCriminal Revision Number               :   57/2/14 dated 07.02.2014\nCc No.                                 :   20/1/13\nPs                                     :  Chanakyapuri\nU/s                                    :   499/500 Ipc\n\n\nM/s Jindal Steel & Power Ltd.\nThrough its Director Sh. Rajeev Bhaduria\nJindal Centre, 12 Bhikaji Cama Place,\nNew Delhi\u00ad110066                          ....Revisionist/Petitioner\n\n\n                                                         versus\n1)  The State\nThrough Additional Public Prosecutor\n\n\n2) Planman Media Pvt. Ltd.\n(Owner of the Sunday Indian)\nIipm Tower,\nC\u00ad56/30, Sector\u00ad62,\nNoida\u00ad201301\nUp\n\n\n3) Mr. \nArindam Chaudhuri\nEditor in Chief\nThe Sunday Indian\n\nCr No. 57/2/14                                                                               1/32\nM/s Jindal Steel & Power Ltd Vs State & Ors. \n Iipm Tower\nC\u00ad56/30, Sector\u00ad62,\nNoida\u00ad201301\nUp    \n\n\n4)  Mr. A. Sandeep\n      Editor\n     The Sunday Indian\n      Iipm Tower\n      C\u00ad56/30, Sector\u00ad62,\n      Noida\u00ad201301\n      Up    \n\n\n5)    Mr. Ashok Bose\n        Publisher\n        The Sunday Indian\n         Iipm Tower\n         C\u00ad56/30, Sector\u00ad62,\n         Noida\u00ad201301\n         Up\n                                                                                ..... Respondents\n\n                                       Revision received by Court: 07.02.2014\n                                       Arguments concluded            : 28.10.2014\n                                       Date of order                  : 13.11.2014\n\n                                                      :Order"
+        },
+        "meta": {
+            "source": "constitution_districtcourts preamble https://indiankanoon.org/doc/144953764/"
+        }
     }
 ]

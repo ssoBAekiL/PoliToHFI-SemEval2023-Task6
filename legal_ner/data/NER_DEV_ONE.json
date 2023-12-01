@@ -55,5 +55,34 @@
         "meta": {
             "source": "criminal_punjab-haryana_high_court judgement https://indiankanoon.org/doc/164068662"
         }
+    },
+    {
+        "id": "b0311cba3aac4d909eec6e156c059617",
+        "annotations": [
+            {
+                "result": [
+                    {
+                        "value": {
+                            "start": 55,
+                            "end": 65,
+                            "text": "G.P. Singh",
+                            "labels": [
+                                "JUDGE"
+                            ]
+                        },
+                        "id": "8HKRZALC",
+                        "from_name": "label",
+                        "to_name": "text",
+                        "type": "labels"
+                    }
+                ]
+            }
+        ],
+        "data": {
+            "text": "(See Principles of Statutory Interpretation by Justice G.P. Singh, 9th Edn., 2004 at p. \n\n 438.)."
+        },
+        "meta": {
+            "source": "financial_rajasthan_high_court judgement https://indiankanoon.org/doc/171721750"
+        }
     }
 ]
