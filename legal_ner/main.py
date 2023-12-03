@@ -222,7 +222,7 @@ if __name__ == "__main__":
             fp16=False,
             fp16_full_eval=False,
             metric_for_best_model="f1-strict",
-            dataloader_num_workers=4,
+            dataloader_num_workers=2,
             dataloader_pin_memory=True,
         )
 
