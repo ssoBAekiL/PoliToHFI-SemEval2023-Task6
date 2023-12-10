@@ -10,7 +10,7 @@ from transformers import Trainer, DefaultDataCollator, TrainingArguments
 from utils.dataset import LegalNERTokenDataset
 
 import spacy
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("es_core_news_sm")
 
 
 ############################################################
@@ -149,9 +149,10 @@ if __name__ == "__main__":
         # "nlpaueb/legal-bert-base-uncased",          # ft on Legal Domain
         # "saibo/legal-roberta-base",                 # ft on Legal Domain
         # "nlpaueb/bert-base-uncased-eurlex",         # ft on Eurlex
-        "nlpaueb/bert-base-uncased-echr",           # ft on ECHR
+        # "nlpaueb/bert-base-uncased-echr",           # ft on ECHR
         # "studio-ousia/luke-base",                   # LUKE base
         # "studio-ousia/luke-large",                  # LUKE large
+        "MMG/xlm-roberta-large-ner-spanish"
     ]
 
     for model_path in model_paths:
