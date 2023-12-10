@@ -92,20 +92,11 @@ if __name__ == "__main__":
 
     ## Define the labels
     original_label_list = [
-        "COURT",
-        "PETITIONER",
-        "RESPONDENT",
-        "JUDGE",
-        "DATE",
-        "ORG",
-        "GPE",
-        "STATUTE",
-        "PROVISION",
-        "PRECEDENT",
-        "CASE_NUMBER",
-        "WITNESS",
-        "OTHER_PERSON",
-        "LAWYER"
+        "legal",
+        "per",
+        "org",
+        "time",
+        "loc"
     ]
     labels_list = ["B-" + l for l in original_label_list]
     labels_list += ["I-" + l for l in original_label_list]
