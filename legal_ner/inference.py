@@ -144,7 +144,7 @@ for model_path in sorted(all_model_path):
     for i in tqdm(range(len(data))):
 
         text = data[i]['data']['text']
-        source = data[i]['meta']['source']
+        # source = data[i]['meta']['source']
         
         results = ner_extr.extract_ner(text)
         
