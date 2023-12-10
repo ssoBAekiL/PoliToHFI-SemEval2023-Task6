@@ -90,29 +90,29 @@ class NERExtractor:
 ## Define the models to use with the corresponding checkpoint and tokenizer
 base_dir = "results"
 all_model_path = [
-    (f'{base_dir}/bert-large-NER/checkpoint-65970',
-    'dslim/bert-large-NER'),                    # ft on NER
-    (f'{base_dir}/roberta-large-ner-english/checkpoint-65970',
-    'Jean-Baptiste/roberta-large-ner-english'), # ft on NER
-    (f'{base_dir}/nlpaueb/legal-bert-base-uncased/checkpoint-65970',
-    'nlpaueb/legal-bert-base-uncased'),         # ft on Legal Domain
-    (f'{base_dir}/saibo/legal-roberta-base/checkpoint-65970',
-    'saibo/legal-roberta-base'),                # ft on Legal Domain
-    (f'{base_dir}/nlpaueb/bert-base-uncased-eurlex/checkpoint-65970',
-    'nlpaueb/bert-base-uncased-eurlex'),        # ft on Eurlex
-    (f'{base_dir}/nlpaueb/bert-base-uncased-echr/checkpoint-65970',
+    # (f'{base_dir}/bert-large-NER/checkpoint-65970',
+    # 'dslim/bert-large-NER'),                    # ft on NER
+    # (f'{base_dir}/roberta-large-ner-english/checkpoint-65970',
+    # 'Jean-Baptiste/roberta-large-ner-english'), # ft on NER
+    # (f'{base_dir}/nlpaueb/legal-bert-base-uncased/checkpoint-65970',
+    # 'nlpaueb/legal-bert-base-uncased'),         # ft on Legal Domain
+    # (f'{base_dir}/saibo/legal-roberta-base/checkpoint-65970',
+    # 'saibo/legal-roberta-base'),                # ft on Legal Domain
+    # (f'{base_dir}/nlpaueb/bert-base-uncased-eurlex/checkpoint-65970',
+    # 'nlpaueb/bert-base-uncased-eurlex'),        # ft on Eurlex
+    (f'{base_dir}/nlpaueb/bert-base-uncased-echr/checkpoint-315',
     'nlpaueb/bert-base-uncased-echr'),          # ft on ECHR
-    (f'{base_dir}/studio-ousia/luke-base/checkpoint-65970',
-    'studio-ousia/luke-base'),                  # LUKE base
-    (f'{base_dir}/studio-ousia/luke-large/checkpoint-65970',
-    'studio-ousia/luke-large'),                 # LUKE large
+    # (f'{base_dir}/studio-ousia/luke-base/checkpoint-65970',
+    # 'studio-ousia/luke-base'),                  # LUKE base
+    # (f'{base_dir}/studio-ousia/luke-large/checkpoint-65970',
+    # 'studio-ousia/luke-large'),                 # LUKE large
 ]
 
 ## Loop over the models
 for model_path in sorted(all_model_path):
 
     ## Load the test data
-    test_data = 'data/NER_TEST/NER_TEST_DATA_FS.json'
+    test_data = 'data/SPANISH_VALID.json'
     data = json.load(open(test_data)) 
 
     ## Load the tokenizer
@@ -124,20 +124,11 @@ for model_path in sorted(all_model_path):
     
     ## Define the labels list
     ll = [
-            "COURT",
-            "PETITIONER",
-            "RESPONDENT",
-            "JUDGE",
-            "DATE",
-            "ORG",
-            "GPE",
-            "STATUTE",
-            "PROVISION",
-            "PRECEDENT",
-            "CASE_NUMBER",
-            "WITNESS",
-            "OTHER_PERSON",
-            "LAWYER"
+        "legal",
+        "per",
+        "org",
+        "time",
+        "loc"
     ]
 
     ## Initialize the NER extractor
