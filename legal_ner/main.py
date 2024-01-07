@@ -9,9 +9,6 @@ from transformers import Trainer, DefaultDataCollator, TrainingArguments
 
 from utils.dataset import LegalNERTokenDataset
 
-import spacy
-nlp = spacy.load("es_core_news_sm")
-
 
 ############################################################
 #                                                          #

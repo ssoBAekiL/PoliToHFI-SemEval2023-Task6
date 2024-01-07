@@ -6,9 +6,6 @@ from transformers import AutoTokenizer, RobertaTokenizerFast
 
 from utils.utils import match_labels
 
-import spacy
-nlp = spacy.load("en_core_web_sm")
-
 ############################################################
 #                                                          #
 #                      DATASET CLASS                       #
