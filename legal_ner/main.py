@@ -9,15 +9,12 @@ from transformers import Trainer, DefaultDataCollator, TrainingArguments
 
 from utils.dataset import LegalNERTokenDataset
 
-import spacy
-nlp = spacy.load("en_core_web_sm")
-
 
 ############################################################
 #                                                          #
 #                           MAIN                           #
 #                                                          #
-############################################################ 
+############################################################
 if __name__ == "__main__":
 
     parser = ArgumentParser(description="Training of LUKE model")
@@ -80,7 +77,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    ## Parameters
+    # Parameters
     ds_train_path = args.ds_train_path  # e.g., 'data/NER_TRAIN/NER_TRAIN_ALL.json'
     ds_valid_path = args.ds_valid_path  # e.g., 'data/NER_DEV/NER_DEV_ALL.json'
     output_folder = args.output_folder  # e.g., 'results/'
@@ -90,40 +87,40 @@ if __name__ == "__main__":
     weight_decay = args.weight_decay    # e.g., 0.01
     warmup_ratio = args.warmup_ratio    # e.g., 0.06
 
-    ## Define the labels
-    original_label_list = [
-        "COURT",
-        "PETITIONER",
-        "RESPONDENT",
-        "JUDGE",
-        "DATE",
-        "ORG",
-        "GPE",
-        "STATUTE",
-        "PROVISION",
-        "PRECEDENT",
-        "CASE_NUMBER",
-        "WITNESS",
-        "OTHER_PERSON",
-        "LAWYER"
+    # Define the labels
+    labels_list = [
+        'B-LIT',
+        'B-LOC',
+        'B-NRM',
+        'B-ORG',
+        'B-PER',
+        'B-REG',
+        'B-RS',
+        'I-LIT',
+        'I-LOC',
+        'I-NRM',
+        'I-ORG',
+        'I-PER',
+        'I-REG',
+        'I-RS',
     ]
-    labels_list = ["B-" + l for l in original_label_list]
-    labels_list += ["I-" + l for l in original_label_list]
-    num_labels = len(labels_list) + 1
+    num_labels = len(labels_list)
 
-    ## Compute metrics
+    # Compute metrics
     def compute_metrics(pred):
 
-        # Preds
+        #  Preds
         predictions = np.argmax(pred.predictions, axis=-1)
         predictions = np.concatenate(predictions, axis=0)
-        prediction_ids = [[idx_to_labels[p] if p != -100 else "O" for p in predictions]]
+        prediction_ids = [
+            [idx_to_labels[p] if p != -100 else "O" for p in predictions]]
 
         # Labels
         labels = pred.label_ids
         labels = np.concatenate(labels, axis=0)
         labels_ids = [[idx_to_labels[p] if p != -100 else "O" for p in labels]]
-        unique_labels = list(set([l.split("-")[-1] for l in list(set(labels_ids[0]))]))
+        unique_labels = list(set([l.split("-")[-1]
+                             for l in list(set(labels_ids[0]))]))
         unique_labels.remove("O")
 
         # Evaluator
@@ -151,60 +148,61 @@ if __name__ == "__main__":
             / (results["exact"]["precision"] + results["exact"]["recall"] + 1e-9),
         }
 
-    ## Define the models
+    # Define the models
     model_paths = [
         # "dslim/bert-large-NER",                     # ft on NER
         # "Jean-Baptiste/roberta-large-ner-english",  # ft on NER
         # "nlpaueb/legal-bert-base-uncased",          # ft on Legal Domain
         # "saibo/legal-roberta-base",                 # ft on Legal Domain
         # "nlpaueb/bert-base-uncased-eurlex",         # ft on Eurlex
-        "nlpaueb/bert-base-uncased-echr",           # ft on ECHR
+        # "nlpaueb/bert-base-uncased-echr",           # ft on ECHR
         # "studio-ousia/luke-base",                   # LUKE base
         # "studio-ousia/luke-large",                  # LUKE large
+        "elenanereiss/bert-german-ler"
     ]
 
     for model_path in model_paths:
 
         print("MODEL: ", model_path)
 
-        ## Define the train and test datasets
+        # Define the train and test datasets
         use_roberta = False
         if "luke" in model_path or "roberta" in model_path:
             use_roberta = True
 
         train_ds = LegalNERTokenDataset(
-            ds_train_path, 
-            model_path, 
-            labels_list=labels_list, 
-            split="train", 
+            ds_train_path,
+            model_path,
+            labels_list=labels_list,
+            split="train",
             use_roberta=use_roberta
         )
 
         val_ds = LegalNERTokenDataset(
-            ds_valid_path, 
-            model_path, 
-            labels_list=labels_list, 
-            split="val", 
+            ds_valid_path,
+            model_path,
+            labels_list=labels_list,
+            split="val",
             use_roberta=use_roberta
         )
 
-        ## Define the model
+        #  Define the model
         model = AutoModelForTokenClassification.from_pretrained(
-            model_path, 
-            num_labels=num_labels, 
+            model_path,
+            num_labels=num_labels,
             ignore_mismatched_sizes=True
         )
 
-        ## Map the labels
+        # Map the labels
         idx_to_labels = {v[1]: v[0] for v in train_ds.labels_to_idx.items()}
 
-        ## Output folder
+        # Output folder
         new_output_folder = os.path.join(output_folder, 'all')
         new_output_folder = os.path.join(new_output_folder, model_path)
         if not os.path.exists(new_output_folder):
             os.makedirs(new_output_folder)
 
-        ## Training Arguments
+        #  Training Arguments
         training_args = TrainingArguments(
             output_dir=new_output_folder,
             num_train_epochs=num_epochs,
@@ -226,10 +224,10 @@ if __name__ == "__main__":
             dataloader_pin_memory=True,
         )
 
-        ## Collator
+        # Collator
         data_collator = DefaultDataCollator()
 
-        ## Trainer
+        #  Trainer
         trainer = Trainer(
             model=model,
             args=training_args,
@@ -239,11 +237,10 @@ if __name__ == "__main__":
             data_collator=data_collator,
         )
 
-        ## Train the model and save it
+        #  Train the model and save it
         trainer.train()
         trainer.save_model(output_folder)
         trainer.evaluate()
-
 
 
 """python 3.10
