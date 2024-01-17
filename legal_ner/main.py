@@ -88,7 +88,7 @@ if __name__ == "__main__":
     warmup_ratio = args.warmup_ratio    # e.g., 0.06
 
     # Define the labels
-    labels_list = [
+    original_label_list = [
         'LIT',
         'LOC',
         'NRM',
@@ -97,7 +97,9 @@ if __name__ == "__main__":
         'REG',
         'RS',
     ]
-    num_labels = len(labels_list)
+    labels_list = ["B-" + l for l in original_label_list]
+    labels_list += ["I-" + l for l in original_label_list]
+    num_labels = len(labels_list) + 1
 
     # Compute metrics
     def compute_metrics(pred):
