@@ -107,7 +107,7 @@ def main():
                             # -1 to remove the trailing space
                             'end': sum(token['len_tokens'][0:t], t) - 1,
                             'text': ' '.join(token['tokens'][f:t]),
-                            'labels': [ner_coarse_tags[token['ner_coarse_tags'][f]]]
+                            'labels': [ner_coarse_tags[token['ner_coarse_tags'][f]][2:]]
                         },
                         'id': str(uuid4()),
                         'from_name': 'label',

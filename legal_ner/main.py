@@ -89,20 +89,13 @@ if __name__ == "__main__":
 
     # Define the labels
     labels_list = [
-        'B-LIT',
-        'B-LOC',
-        'B-NRM',
-        'B-ORG',
-        'B-PER',
-        'B-REG',
-        'B-RS',
-        'I-LIT',
-        'I-LOC',
-        'I-NRM',
-        'I-ORG',
-        'I-PER',
-        'I-REG',
-        'I-RS',
+        'LIT',
+        'LOC',
+        'NRM',
+        'ORG',
+        'PER',
+        'REG',
+        'RS',
     ]
     num_labels = len(labels_list)
 
