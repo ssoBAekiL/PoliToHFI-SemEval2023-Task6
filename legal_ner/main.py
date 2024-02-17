@@ -149,7 +149,8 @@ if __name__ == "__main__":
         # "nlpaueb/bert-base-uncased-echr",           # ft on ECHR
         # "studio-ousia/luke-base",                   # LUKE base
         # "studio-ousia/luke-large",                  # LUKE large
-        "MMG/xlm-roberta-large-ner-spanish"
+        "MMG/xlm-roberta-large-ner-spanish",
+        "studio-ousia/mluke-base"
     ]
 
     for model_path in model_paths:
@@ -229,9 +230,10 @@ if __name__ == "__main__":
         )
 
         ## Train the model and save it
-        trainer.train()
+        trainer.train(resume_from_checkpoint=True)
         trainer.save_model(output_folder)
-        trainer.evaluate()
+        eval = trainer.evaluate()
+        print('eval:', eval)
 
 
 

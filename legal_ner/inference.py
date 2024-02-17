@@ -100,24 +100,28 @@ all_model_path = [
     # 'saibo/legal-roberta-base'),                # ft on Legal Domain
     # (f'{base_dir}/nlpaueb/bert-base-uncased-eurlex/checkpoint-65970',
     # 'nlpaueb/bert-base-uncased-eurlex'),        # ft on Eurlex
-    (f'{base_dir}/nlpaueb/bert-base-uncased-echr/checkpoint-315',
-    'nlpaueb/bert-base-uncased-echr'),          # ft on ECHR
+    #(f'{base_dir}/nlpaueb/bert-base-uncased-echr/checkpoint-315',
+    #'nlpaueb/bert-base-uncased-echr'),          # ft on ECHR
     # (f'{base_dir}/studio-ousia/luke-base/checkpoint-65970',
     # 'studio-ousia/luke-base'),                  # LUKE base
     # (f'{base_dir}/studio-ousia/luke-large/checkpoint-65970',
     # 'studio-ousia/luke-large'),                 # LUKE large
+    (f'{base_dir}/studio-ousia/mluke-base/checkpoint-1060',
+    'studio-ousia/mluke-base'),
+    (f'{base_dir}/MMG/xlm-roberta-large-ner-spanish/checkpoint-1250',
+    'MMG/xlm-roberta-large-ner-spanish')
 ]
 
 ## Loop over the models
 for model_path in sorted(all_model_path):
 
     ## Load the test data
-    test_data = 'data/SPANISH_VALID.json'
+    test_data = 'data/SPANISH_TEST.json'
     data = json.load(open(test_data)) 
 
     ## Load the tokenizer
     tokenizer_path = model_path[1]
-    if 'luke' in model_path[0]: 
+    if 'luke' in model_path[0] or 'roberta' in model_path[0]: 
         tokenizer = RobertaTokenizerFast.from_pretrained("roberta-base")
     else:
         tokenizer = AutoTokenizer.from_pretrained(tokenizer_path) 
