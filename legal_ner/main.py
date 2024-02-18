@@ -89,13 +89,11 @@ if __name__ == "__main__":
 
     # Define the labels
     original_label_list = [
-        'LIT',
-        'LOC',
-        'NRM',
-        'ORG',
+        'LEGAL',
         'PER',
-        'REG',
-        'RS',
+        'ORG',
+        'LOC',
+        'TIME',
     ]
     labels_list = ["B-" + l for l in original_label_list]
     labels_list += ["I-" + l for l in original_label_list]
