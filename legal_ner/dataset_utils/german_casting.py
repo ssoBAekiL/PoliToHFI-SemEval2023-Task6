@@ -1,9 +1,11 @@
-from datasets import load_dataset
-from uuid import uuid4
 import json
+from uuid import uuid4
+
+from datasets import load_dataset
 
 
 def find_contiguous_tags(tags):
+
     indices = []
     start_index = 0
 
@@ -117,7 +119,7 @@ def main():
 
             env_list.append(new_dict)
 
-        with open(f'{env}.json', 'w') as fp:
+        with open(f'de_{env}.json', 'w') as fp:
             json.dump(env_list, fp)
 
 
