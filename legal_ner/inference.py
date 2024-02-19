@@ -90,22 +90,26 @@ class NERExtractor:
 ## Define the models to use with the corresponding checkpoint and tokenizer
 base_dir = "results"
 all_model_path = [
-    (f'{base_dir}/bert-large-NER/checkpoint-65970',
-    'dslim/bert-large-NER'),                    # ft on NER
-    (f'{base_dir}/roberta-large-ner-english/checkpoint-65970',
-    'Jean-Baptiste/roberta-large-ner-english'), # ft on NER
-    (f'{base_dir}/nlpaueb/legal-bert-base-uncased/checkpoint-65970',
-    'nlpaueb/legal-bert-base-uncased'),         # ft on Legal Domain
-    (f'{base_dir}/saibo/legal-roberta-base/checkpoint-65970',
-    'saibo/legal-roberta-base'),                # ft on Legal Domain
-    (f'{base_dir}/nlpaueb/bert-base-uncased-eurlex/checkpoint-65970',
-    'nlpaueb/bert-base-uncased-eurlex'),        # ft on Eurlex
-    (f'{base_dir}/nlpaueb/bert-base-uncased-echr/checkpoint-65970',
-    'nlpaueb/bert-base-uncased-echr'),          # ft on ECHR
-    (f'{base_dir}/studio-ousia/luke-base/checkpoint-65970',
-    'studio-ousia/luke-base'),                  # LUKE base
-    (f'{base_dir}/studio-ousia/luke-large/checkpoint-65970',
-    'studio-ousia/luke-large'),                 # LUKE large
+    # (f'{base_dir}/bert-large-NER/checkpoint-65970',
+    # 'dslim/bert-large-NER'),                    # ft on NER
+    # (f'{base_dir}/roberta-large-ner-english/checkpoint-65970',
+    # 'Jean-Baptiste/roberta-large-ner-english'), # ft on NER
+    # (f'{base_dir}/nlpaueb/legal-bert-base-uncased/checkpoint-65970',
+    # 'nlpaueb/legal-bert-base-uncased'),         # ft on Legal Domain
+    # (f'{base_dir}/saibo/legal-roberta-base/checkpoint-65970',
+    # 'saibo/legal-roberta-base'),                # ft on Legal Domain
+    # (f'{base_dir}/nlpaueb/bert-base-uncased-eurlex/checkpoint-65970',
+    # 'nlpaueb/bert-base-uncased-eurlex'),        # ft on Eurlex
+    # (f'{base_dir}/nlpaueb/bert-base-uncased-echr/checkpoint-65970',
+    # 'nlpaueb/bert-base-uncased-echr'),          # ft on ECHR
+    # (f'{base_dir}/studio-ousia/luke-base/checkpoint-65970',
+    # 'studio-ousia/luke-base'),                  # LUKE base
+    # (f'{base_dir}/studio-ousia/luke-large/checkpoint-65970',
+    # 'studio-ousia/luke-large'),                 # LUKE large
+    (f'{base_dir}/all/elenanereiss/bert-german-ler/checkpoint-8345',
+    'elenanereiss/bert-german-ler'),
+    (f'{base_dir}/all/Babelscape/wikineural-multilingual-ner/checkpoint-8345',
+    'Babelscape/wikineural-multilingual-ner'),
 ]
 
 ## Loop over the models
@@ -117,27 +121,20 @@ for model_path in sorted(all_model_path):
 
     ## Load the tokenizer
     tokenizer_path = model_path[1]
-    if 'luke' in model_path[0]: 
+    if 'luke' in model_path[0] or "roberta" in model_path: 
         tokenizer = RobertaTokenizerFast.from_pretrained("roberta-base")
     else:
         tokenizer = AutoTokenizer.from_pretrained(tokenizer_path) 
     
     ## Define the labels list
     ll = [
-            "COURT",
-            "PETITIONER",
-            "RESPONDENT",
-            "JUDGE",
-            "DATE",
-            "ORG",
-            "GPE",
-            "STATUTE",
-            "PROVISION",
-            "PRECEDENT",
-            "CASE_NUMBER",
-            "WITNESS",
-            "OTHER_PERSON",
-            "LAWYER"
+        'LIT',
+        'LOC',
+        'NRM',
+        'ORG',
+        'PER',
+        'REG',
+        'RS',
     ]
 
     ## Initialize the NER extractor
@@ -153,7 +150,7 @@ for model_path in sorted(all_model_path):
     for i in tqdm(range(len(data))):
 
         text = data[i]['data']['text']
-        source = data[i]['meta']['source']
+        # source = data[i]['meta']['source']
         
         results = ner_extr.extract_ner(text)
         

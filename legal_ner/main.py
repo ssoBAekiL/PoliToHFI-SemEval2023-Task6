@@ -153,7 +153,8 @@ if __name__ == "__main__":
         # "nlpaueb/bert-base-uncased-echr",           # ft on ECHR
         # "studio-ousia/luke-base",                   # LUKE base
         # "studio-ousia/luke-large",                  # LUKE large
-        "elenanereiss/bert-german-ler"
+        "elenanereiss/bert-german-ler",
+        "Babelscape/wikineural-multilingual-ner",
     ]
 
     for model_path in model_paths:

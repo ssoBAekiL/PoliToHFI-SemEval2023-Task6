@@ -25,3 +25,7 @@ To fine-tune the models on the train data and evaluate them on the dev set, run:
 To predict the labels for the test set, run:
 
     python inference.py
+
+## Data
+
+The data is openly available in [this shared folder](https://drive.google.com/drive/folders/10LV6g0judkWElfn4GvvtJafJ-KAkX_xm?usp=sharing)
