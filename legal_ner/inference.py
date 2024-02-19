@@ -106,8 +106,8 @@ all_model_path = [
     # 'studio-ousia/luke-base'),                  # LUKE base
     # (f'{base_dir}/studio-ousia/luke-large/checkpoint-65970',
     # 'studio-ousia/luke-large'),                 # LUKE large
-    (f'{base_dir}/all/elenanereiss/bert-german-ler/checkpoint-8345',
-    'elenanereiss/bert-german-ler'),
+    # (f'{base_dir}/all/elenanereiss/bert-german-ler/checkpoint-8345',
+    # 'elenanereiss/bert-german-ler'),
     (f'{base_dir}/all/Babelscape/wikineural-multilingual-ner/checkpoint-8345',
     'Babelscape/wikineural-multilingual-ner'),
 ]
@@ -128,13 +128,11 @@ for model_path in sorted(all_model_path):
     
     ## Define the labels list
     ll = [
-        'LIT',
-        'LOC',
-        'NRM',
-        'ORG',
+        'LEGAL',
         'PER',
-        'REG',
-        'RS',
+        'ORG',
+        'LOC',
+        'TIME',
     ]
 
     ## Initialize the NER extractor
